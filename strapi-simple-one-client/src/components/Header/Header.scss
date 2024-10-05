@@ -1,0 +1,147 @@
+@import "../../css-config/mixins.scss";
+
+.main-header {
+    width: 100%;
+    padding: 0 20px;
+    z-index: 99;
+    background-color: #212121;
+    color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    @include md {
+        padding: 0 40px;
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        @include md {
+            height: 80px;
+        }
+    }
+    .left {
+        list-style-type: none;
+        display: none;
+        gap: 25px;
+        @include md {
+            display: flex;
+        }
+        li {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+    .center {
+        font-size: 22px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        @include md {
+            font-size: 34px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .center img {
+        width: 80px;
+        height: 80px;
+    }
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include md {
+            gap: 25px;
+        }
+        svg {
+            font-size: 20px;
+            cursor: pointer;
+            @include md {
+                font-size: 24px;
+            }
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+        .cart-icon {
+            position: relative;
+            top: 2px;
+            span {
+                min-width: 20px;
+                text-align: center;
+                background: #00970d;
+                padding: 2.5px;
+                position: absolute;
+                top: -5px;
+                right: -12px;
+                font-size: 12px;
+                line-height: 1;
+                border-radius: 10px;
+            }
+        }
+        .menu-icon {
+            display: block;
+            @include md {
+                display: none;
+            }
+        }
+    }
+    &.sticky-header {
+        background-color: #212121;
+        color: white;
+        position: sticky;
+        top: 0;
+        transform: translateY(-60px);
+        animation: StickyHeader 0.3s ease forwards;
+    }
+}
+
+.dropdown-menu {
+    display: block;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    background-color: #212121;
+    z-index: 98;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+    color: white;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            font-size: 15px;
+            padding: 15px 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+    
+    &.open {
+        max-height: 300px; /* Adjust based on the content height */
+    }
+}
+
+@keyframes StickyHeader {
+    0% {
+        transform: translateY(-60px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
