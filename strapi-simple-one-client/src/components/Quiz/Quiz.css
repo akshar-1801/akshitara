@@ -1,0 +1,144 @@
+/* Add this CSS to your stylesheet */
+.chat-container {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    /* border-radius: 8px; */
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.chat-header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-header span{
+    cursor: pointer;
+}
+
+.chat-history {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+}
+
+.chat-history::-webkit-scrollbar {
+    width: 0px;
+}
+
+.chat-message {
+    /* max-width: 80%; */
+    display: inline-block;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+}
+
+.chat-message.doctor {
+    align-self: flex-start;
+    background-color: #e0f7fa;
+    border-radius: 10px 10px 10px 0;
+}
+
+.chat-message.user {
+    align-self: flex-end;
+    background-color: #c8e6c9;
+    border-radius: 10px 10px 0 10px;
+}
+
+.chat-message.option {
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+    min-width: 100px;
+}
+
+.chat-message.option:hover {
+    background-color: #d0d0d0;
+}
+
+.question-card {
+    margin-top: 20px;
+    display: flex; /* Add this line */
+    flex-direction: column; /* Add this line */
+    align-items: flex-start; /* Add this line */
+}
+.suggest-products-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #00970d;
+    border-bottom: 3px solid #006d09;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.suggest-products-btn:hover {
+    background-color: #45a049;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Add this line */
+    width: 100%; /* Add this line */
+}
+
+.options .chat-message {
+    cursor: pointer;
+}
+
+.option-button {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-button:hover {
+    background-color: #f0f0f0;
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
